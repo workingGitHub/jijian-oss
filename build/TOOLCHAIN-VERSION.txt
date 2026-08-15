@@ -1,0 +1,6 @@
+# FFmpeg(ohos/arm64, wma) 构建工具链版本记录
+built-at: 2026-08-15 12:56:56 +0800
+ndk:      /Applications/DevEco-Studio.app/Contents/sdk/default/openharmony/native
+compiler: OHOS (dev) clang version 15.0.4 (llvm-project 99548401bd80576251755b185ab95945e5fe7884)
+ffmpeg:   (非 git 检出,以 tag n7.1.1 源码包为准)
+script:   scripts/build-ffmpeg-ohos.sh

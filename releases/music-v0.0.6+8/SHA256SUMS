@@ -60,7 +60,7 @@ a99af2e18407d290267c26e65a0c158d0fe6c4ed6b628a9b1eac6cba33ecd67d  ./ios/libsmb2/
 f964dca686bd1486a1d12895d17ca817b861fa1d2ef8069e3696f20ca92a07b2  ./ios/libsmb2/libsmb2.xcframework/ios-arm64/libsmb2.framework/libsmb2
 68b2936c7bf949b8d09e39173b1653faf071be93986b2a62347a9f7e2dc9ac0d  ./ios/libsmb2/libsmb2.xcframework/ios-arm64_x86_64-simulator/libsmb2.framework/Info.plist
 1cd502e82a735cd113d313792c1a10a55582d811a36cf7f91301110efc350640  ./ios/libsmb2/libsmb2.xcframework/ios-arm64_x86_64-simulator/libsmb2.framework/libsmb2
-b247a3e334ec6f18e04d86f4f3291c90b8fc2def4c1de3044fdad644463a9b4e  ./ohos/libavcodec.so
-905b10db22c65a32d9b86dea2b14228c6c878c5c1188f7a48a98e044c4919e4e  ./ohos/libavformat.so
-c932501e3f1c09c7648fdc77a64d80e8e3183a4fa7f555af2473cdb572f8dd04  ./ohos/libavutil.so
-08e96a5a01afee3e5b89a4648eeb573a82a1f9232517ae379f54699d9e62cf2b  ./ohos/libswresample.so
+58889627e0818b70e093b1283986e47ba1550254405a5b0ffa8dac5af7ee0b6b  ./ohos/libavcodec.so
+08f0e46a7d4cd0df1a16625426accd079060870e6f95575056adbeb25780e456  ./ohos/libavformat.so
+29331a01e22071cfaf4cafccf2da1b641a70497eb2b5e9dbbe3e78c76066cc6e  ./ohos/libavutil.so
+ddf53ec643cb328fccaf2d4bdd4457f431a50e0af58ec020d051bdad9b32bb24  ./ohos/libswresample.so

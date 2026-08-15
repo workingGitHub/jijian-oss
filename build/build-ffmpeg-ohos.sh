@@ -21,6 +21,10 @@ TOOLCHAIN="$NDK/llvm"
 SYSROOT="$NDK/sysroot"
 CC="$TOOLCHAIN/bin/aarch64-unknown-linux-ohos-clang"
 OUT="$REPO_ROOT/vendor/ffmpeg-ohos"
+# 安装前缀固定(与检出路径解耦):configure 的 --prefix 会随 FFMPEG_CONFIGURATION
+# 字符串嵌入 .so;若用 REPO_ROOT 派生,换机器/换检出目录就无法字节级复现。
+# 固定为统一路径,任意环境可复现同等二进制(验证记录见 docs/ohos-android-gap.md)。
+INSTALL_PREFIX="/tmp/ffmpeg-ohos-install"
 
 if [[ ! -x "$CC" ]]; then
   echo "✗ 找不到鸿蒙交叉编译器: $CC" >&2
@@ -46,7 +50,7 @@ echo "==> configure (aarch64-ohos, 仅 WMA 解码)"
   --sysroot="$SYSROOT" \
   --extra-cflags="-D__OHOS__ -O2 -fPIC" \
   --extra-ldflags="-fPIC" \
-  --prefix="$OUT/prebuilt/arm64-v8a" \
+  --prefix="$INSTALL_PREFIX" \
   --enable-shared \
   --disable-static \
   --disable-programs \
@@ -85,16 +89,17 @@ sed -i.bak \
 echo "==> make (并行 $(sysctl -n hw.ncpu))"
 make -j"$(sysctl -n hw.ncpu)" >/dev/null
 
-echo "==> install 到 $OUT"
-rm -rf "$OUT"
-mkdir -p "$OUT/libs/arm64-v8a" "$OUT/include"
+echo "==> install 到 $INSTALL_PREFIX"
+rm -rf "$OUT" "$INSTALL_PREFIX"
+mkdir -p "$OUT/libs/arm64-v8a"
 make install >/dev/null
+cp -R "$INSTALL_PREFIX/include" "$OUT/include"
 # 只保留解码链四库。strip 必须用 --strip-unneeded:共享库默认 strip 会把
 # .dynsym(动态导出符号)剥掉,链接期全部 undefined(实测踩坑)。
 STRIP="$TOOLCHAIN/bin/llvm-strip"
 for lib in libavformat libavcodec libswresample libavutil; do
-  "$STRIP" --strip-unneeded "$OUT/prebuilt/arm64-v8a/lib/${lib}.so"
-  cp "$OUT/prebuilt/arm64-v8a/lib/${lib}.so" "$OUT/libs/arm64-v8a/"
+  "$STRIP" --strip-unneeded "$INSTALL_PREFIX/lib/${lib}.so"
+  cp "$INSTALL_PREFIX/lib/${lib}.so" "$OUT/libs/arm64-v8a/"
 done
 
 # 交付合规:记录工具链与源码版本到 TOOLCHAIN-VERSION.txt。LGPL 源码交付
