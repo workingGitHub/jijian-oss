@@ -6,8 +6,8 @@
 
 ## 镜像地址
 
-- GitHub(主):`<TODO: 仓库创建后替换>`
-- Gitee(镜像,国内可达性保障):`<TODO: 仓库创建后替换>`
+- GitHub(主):https://github.com/workingGitHub/jijian-oss
+- Gitee(镜像,国内可达性保障):暂未开通,后续补充
 
 ## 仓库结构
 
