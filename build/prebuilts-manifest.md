@@ -25,4 +25,4 @@ gradle 构建期从上游 release 下载(md5 锁定),即 APK 内分发的实际�
 上游: https://github.com/sahlberg/libsmb2 (LGPL-2.1)
 
 ## FFmpeg 源码说明
-source/ 下 FFmpeg 归档来源:本地构建源码目录 /tmp/ffmpeg-wma/FFmpeg 打包(鸿蒙构建实际所用)。
+source/ 下 FFmpeg 归档来源:先前下载的 FFmpeg 源码归档。
