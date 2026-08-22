@@ -119,14 +119,10 @@ done
 } > "$OUT/TOOLCHAIN-VERSION.txt"
 
 # 同步到鸿蒙工程 libs(HAP 打包时按文件名解析 DT_NEEDED)。
-for app in jijianyinyue jijian_video; do
-  APP_LIBS="$REPO_ROOT/apps/$app/ohos/entry/libs/arm64-v8a"
-  if [[ -d "$REPO_ROOT/apps/$app/ohos" ]]; then
-    mkdir -p "$APP_LIBS"
-    cp "$OUT/libs/arm64-v8a/"*.so "$APP_LIBS/"
-    echo "==> 已同步到 $app/ohos/entry/libs/arm64-v8a/"
-  fi
-done
+APP_LIBS="$REPO_ROOT/apps/jijianyinyue/ohos/entry/libs/arm64-v8a"
+mkdir -p "$APP_LIBS"
+cp "$OUT/libs/arm64-v8a/"*.so "$APP_LIBS/"
+echo "==> 已同步到 apps/jijianyinyue/ohos/entry/libs/arm64-v8a/"
 
 echo "==> 产物:"
 ls -lh "$OUT/libs/arm64-v8a/"
