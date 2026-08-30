@@ -432,7 +432,7 @@ public class AudioService extends MediaBrowserServiceCompat {
         return getResources().getIdentifier(resourceName, resourceType, getApplicationContext().getPackageName());
     }
 
-    // —— 极简音乐自定义通知:图标与绘制辅助(vendor fork 补丁) ——
+    // —— 声坞自定义通知:图标与绘制辅助(vendor fork 补丁) ——
     // 用 Android 框架自带媒体图标(android.R.drawable.ic_media_*),无需在插件包
     // 内额外提供 drawable,各版本/厂商 ROM 均可用。
 
@@ -466,7 +466,7 @@ public class AudioService extends MediaBrowserServiceCompat {
             ApplicationInfo info = getApplicationInfo();
             return String.valueOf(pm.getApplicationLabel(info));
         } catch (Exception e) {
-            return "极简音乐";
+            return "声坞";
         }
     }
 
@@ -712,7 +712,7 @@ public class AudioService extends MediaBrowserServiceCompat {
             for (int i = 0; i < compactActionIndices.length; i++) compactActionIndices[i] = i;
         }
         NotificationCompat.Builder builder = getNotificationBuilder();
-        // —— 极简音乐自定义通知布局(vendor fork 补丁) ——
+        // —— 声坞自定义通知布局(vendor fork 补丁) ——
         // 替换原系统 MediaStyle 模板:封面左侧大图、右侧四行(图标+APP名/文件名/
         // 专辑名/三按钮),并去掉系统在封面角落叠加的 APP 图标。
         // 不再调用 builder.setContentTitle/setLargeIcon/addAction/MediaStyle:
@@ -735,7 +735,7 @@ public class AudioService extends MediaBrowserServiceCompat {
         return builder.build();
     }
 
-    /// 构造极简音乐自定义媒体通知的 [RemoteViews]。
+    /// 构造声坞自定义媒体通知的 [RemoteViews]。
     ///
     /// 布局见 res/layout/yyjt_notification_media.xml。
     /// 数据来源与原 MediaStyle 实现一致:

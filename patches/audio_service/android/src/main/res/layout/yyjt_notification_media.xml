@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  极简音乐自定义媒体通知布局(vendor fork 补丁)。
+  声坞自定义媒体通知布局(vendor fork 补丁)。
 
   配色对齐 App 暖纸主题(packages/shared_ui AppColors.light):
     - 背景:accentSoft #F1E6D9(与首页 Hero 播放框渐变起点同色)
@@ -12,7 +12,7 @@
 
   布局结构(与首页第一行播放框一致):
     ┌────────────────────────────────────────────┐
-    │ ┌─────────┐  [app_icon] 极简音乐            │  行1: APP图标 + APP名
+    │ ┌─────────┐  [app_icon] 声坞            │  行1: APP图标 + APP名
     │ │         │  音乐文件名称(大/粗)            │  行2: 标题(文件名,主题字)
     │ │ 封面大图 │  专辑名称                       │  行3: 专辑名
     │ │  (左侧) │  [◁]  [▶]  [▷]                 │  行4: 上一首/播放/下一首
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:text="极简音乐"
+                android:text="声坞"
                 android:textColor="#8A7E74"
                 android:textSize="12sp"
                 android:singleLine="true" />

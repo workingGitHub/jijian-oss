@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  极简音乐自定义媒体通知的字符串资源(vendor fork 补丁)。
+  声坞自定义媒体通知的字符串资源(vendor fork 补丁)。
 
   仅用于通知布局的 contentDescription(无障碍朗读)与默认 APP 名占位。
   名字加 yyjt_ 前缀,避免与宿主 App 或 audio_service 上游资源冲突。
 -->
 <resources>
-    <string name="yyjt_app_name">极简音乐</string>
+    <string name="yyjt_app_name">声坞</string>
     <string name="yyjt_notification_art_desc">专辑封面</string>
     <string name="yyjt_notification_prev_desc">上一首</string>
     <string name="yyjt_notification_play_desc">播放/暂停</string>
