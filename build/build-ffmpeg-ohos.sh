@@ -104,7 +104,7 @@ done
 
 # 交付合规:记录工具链与源码版本到 TOOLCHAIN-VERSION.txt。LGPL 源码交付
 # 的可复现性三要素 = 源码 commit + 构建脚本 + 工具链版本;索取源码时随附
-# 本文件(见 site/music/oss.html「如何获取对象码与源码」)。
+# 本文件(见官网 dabaixiong.xyz/music/oss.html「如何获取对象码与源码」)。
 {
   echo "# FFmpeg(ohos/arm64, wma) 构建工具链版本记录"
   echo "built-at: $(date '+%Y-%m-%d %H:%M:%S %z')"
