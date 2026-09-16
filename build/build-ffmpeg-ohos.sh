@@ -23,7 +23,7 @@ CC="$TOOLCHAIN/bin/aarch64-unknown-linux-ohos-clang"
 OUT="$REPO_ROOT/vendor/ffmpeg-ohos"
 # 安装前缀固定(与检出路径解耦):configure 的 --prefix 会随 FFMPEG_CONFIGURATION
 # 字符串嵌入 .so;若用 REPO_ROOT 派生,换机器/换检出目录就无法字节级复现。
-# 固定为统一路径,任意环境可复现同等二进制(验证记录见 docs/ohos-android-gap.md)。
+# 固定为统一路径,任意环境可复现同等二进制(验证记录见 docs/guides/ohos-android-gap.md)。
 INSTALL_PREFIX="/tmp/ffmpeg-ohos-install"
 
 if [[ ! -x "$CC" ]]; then
