@@ -1,6 +1,6 @@
 # 预编译件上游出处清单(prebuilts manifest)
 
-- 应用版本: 1.0.18+32(标签 `music-v1.0.18+32`)
+- 应用版本: 1.0.19+33(标签 `music-v1.0.19+33`)
 
 ## 版本锁定(pubspec.lock)
 - media_kit_libs_android_audio: 1.3.8
